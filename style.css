@@ -1,0 +1,165 @@
+/* --- ATUALIZAÇÃO VISUAL --- */
+
+/* Importando uma nova combinação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:wght@400;700&display=swap');
+
+/* --- Reset Básico e Estilos Gerais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Usando 'Montserrat' como fonte principal para um visual limpo e moderno */
+    font-family: 'Montserrat', sans-serif; 
+    background-color: #f0f2f5; /* Trocamos para um cinza ainda mais suave (quase branco) */
+    color: #333;
+    line-height: 1.7;
+}
+
+/* --- Estilo do Cabeçalho e Menu de Navegação (Refinado) --- */
+header {
+    background-color: #ffffff; /* Fundo branco para o menu, mais clean */
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Sombra mais sutil */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #4a4a4a; /* Cor mais suave para os links */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 5px;
+    position: relative; /* Necessário para o pseudo-elemento ::after */
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007BFF; /* Cor de destaque ao passar o mouse */
+}
+
+/* Efeito de sublinhado animado */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007BFF;
+    transition: width 0.4s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Expande o sublinhado no hover */
+}
+
+/* --- Estilo da Área de Conteúdo Principal (Refinado) --- */
+main {
+    padding: 3rem 2rem; /* Aumentamos o espaçamento vertical */
+    display: flex;
+    justify-content: center;
+}
+
+.conteudo {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07); /* Sombra mais pronunciada no card */
+    width: 100%;
+    max-width: 800px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+/* Efeito de "elevar" o card ao passar o mouse */
+.conteudo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Estilo para a foto de perfil */
+.profile-pic {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Deixa a imagem redonda */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    margin: 0 auto 1.5rem auto; /* Centraliza a imagem */
+    border: 5px solid #bed8f3;
+}
+
+h1 {
+    /* Usando 'Lora' para os títulos, criando um contraste elegante */
+    font-family: 'Lora', serif;
+    color: #2a2a2a;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    border-bottom: none; /* Removemos a borda antiga */
+}
+
+/* --- Estilos para o Formulário de Contato (Refinado) --- */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+form input,
+form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de foco nos campos do formulário */
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.03); /* Efeito de crescimento no botão */
+}
